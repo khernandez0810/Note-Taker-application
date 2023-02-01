@@ -34,25 +34,29 @@ app.get('/api/notes/', (req,res) => {
 });
 
 app.post('/api/notes', (req,res) => {
-    let newNote = req.body;
-    let noteLength = (noteData.length);
-    newNote.id = noteLength;
-    noteData.push(newNote);
-    fs.writeFile('./db/db.json' , JSON.stringify(noteData), err => {
-        if(err) throw err;
-        return true;
-    })
-    console.log(noteData)
+  noteData.push(req.body);
+  noteData.forEach(() => {
+      note.id = i+1;
+  });
+  fs.writeFile('./db/db.json' , JSON.stringify(noteData), err => {
+      if(err) throw err;
+      return true;
+  })
+  console.log(noteData)
 });
 
 
 app.delete('/api/notes/:id', (req,res) => {
-    const newNotes = noteData.filter(note => note.id !== parseInt(req.params.id))
-    fs.writeFile('./db/db.json' , JSON.stringify(newNotes), err => {
-        if(err) throw err;
-        return true
-    });
-    console.log(noteData)
+  const id = req.params.id;
+  noteData.splice(id - 1,1);
+  noteData.forEach(() => {
+      obj.id = i+1;
+  });
+  
+  fs.writeFile('./db/db.json' , JSON.stringify(newNotes), () => {
+ res.json(noteData)
+  });
+  console.log(noteData)
 });
 
 });

@@ -2,7 +2,7 @@
 <h2>Here you will find a handy tool to assist you in keeping track of your notes using your very own database that will allow you to save and delete</h2>
 <h2>Links:</h2>
 Link to Deployed Application:
-<a href="https://dashboard.heroku.com/apps/warm-sierra-20051"> Link to app walkthrough</a>
+<a href="https://warm-sierra-20051.herokuapp.com/"> Link to app walkthrough</a>
 <h2>Screenshot of Deployed application</h2>
 <img src="./noteTakerApp.png">
 

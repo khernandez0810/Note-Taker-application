@@ -50,7 +50,7 @@ app.delete('/api/notes/:id', (req,res) => {
   const id = req.params.id;
   noteData.splice(id - 1,1);
   noteData.forEach(() => {
-      obj.id = i+1;
+      note.id = i+1;
   });
   
   fs.writeFile('./db/db.json' , JSON.stringify(newNotes), () => {
